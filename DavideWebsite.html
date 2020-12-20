@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Davide Girardi</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<!--librerie -->
+		<!-- W3.CSS -->
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<!-- icone fb insta ec... -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- Sliding images -->
+		<script src="https://www.w3schools.com/lib/w3.js"></script>
+		
+		<!-- CSS Flip Card stuff -->
+	<style>
+	
+	.cover {object-fit: cover;}
+	
+	.flip-card {
+		  margin-left: auto;
+		  margin-right: auto;
+	  background-color: transparent;
+	  width: 300px;
+	  height: 300px;
+	  perspective: 1000px;
+	}
+
+	.flip-card-inner {
+	  position: relative;
+	  width: 100%;
+	  height: 100%;
+	  text-align: center;
+	  transition: transform 0.6s;
+	  transform-style: preserve-3d;
+	  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	}
+
+	.flip-card:hover .flip-card-inner {
+	  transform: rotateY(180deg);
+	}
+
+	.flip-card-front, .flip-card-back {
+	  position: absolute;
+	  width: 100%;
+	  height: 100%;
+	  -webkit-backface-visibility: hidden;
+	  backface-visibility: hidden;
+	}
+
+	.flip-card-front {
+	  background-color: #bbb;
+	  color: black;
+	}
+
+	.flip-card-back {
+	  background-color: #2980b9;
+	  color: white;
+	  transform: rotateY(180deg);
+	}
+	</style>
+</head>
+
+<body>
+
+<!-- Navigation (Stays on Top) -->
+<div class="w3-top w3-bar w3-black" style="font-size: 18px;">
+	<a href="#home" class="w3-bar-item w3-button">Home</a>
+	<a href="#places" class="w3-bar-item w3-button">Cool Places</a>
+	<a href="#contact" class="w3-bar-item w3-button">Contact</a>
+</div>
+
+
+<div id="home" class="w3-display-container w3-text-white " style="width:100%;height:600px;" >
+	<!-- Slides -->
+	<img class="slides " src="Images/Montevecchia.jpg" style="width:100%;height:100%;object-fit:cover;">
+	<img class="slides " src="Images/ResegoneView.jpg" style="width:100%;height:100%;object-fit:cover;">
+	<img class="slides " src="Images/Bianconiglio.jpg" style="width:100%;height:100%;object-fit:cover;">
+	<script>
+		w3.slideshow(".slides", 2000);
+	</script>
+	
+	<div class="w3-display-middle w3-container">
+		<h1 class="w3-center" style="font-size: 80px;">Davide Girardi</h1>
+		<h2 >"Take the risk of thinking with your head"</h2>
+	</div>
+</div>
+
+<!-- Start Content -->
+<div class="w3-content w3-light-gray">
+
+	<!-- Places -->
+	<div id="places" class="w3-container w3-padding-32">
+		<h2 class="w3-center" style="font-size: 50px;">Cool places</h2>
+		
+		<div class="w3-row-padding w3-margin-top">
+		
+			<div class="w3-third">
+				<div class="w3-card-4">
+					<img src="Images/Bianconiglio.jpg" style="width:100%">
+					<div class="w3-container w3-center" style="background-color: white">
+						<p>Scoglio del coniglio</p>
+						<p>Palinuro</p>
+					</div>
+				</div>
+				<br>
+			</div>
+			
+			<div class="w3-third">
+				<div class="w3-card-4">
+					<img src="Images/ResegoneView.jpg" style="width:100%">
+					<div class="w3-container w3-center" style="background-color: white">
+						<p>Monte Resegone</p>
+						<p>Valsassina</p>
+					</div>
+				</div>
+				<br>
+			</div>
+			
+			<div class="w3-third">
+				<div class="w3-card-4">
+					<img src="Images/u2.jpg" style="width:100%">
+					<div class="w3-container w3-center"  style="background-color: white">
+						<p>edificio U2, Bicocca</p>
+						<p>Piazza della scienza, Milano</p>
+					</div>
+				</div>
+				<br>
+			</div>
+
+		</div>
+	</div>
+
+		
+	<!-- Contact -->
+	<div id="contact" class="w3-container w3-center w3-padding-32">
+		<h2 class="w3-wide">CONTACT</h2>
+		Seregno, IT<br>
+		Phone: +00 0000<br>
+		Email: mail@mail.com<br>
+		<p class="w3-opacity w3-center"><i>Fan? Drop a note!</i></p>
+
+		<form action="/action_page.php" target="_blank">
+			<input class="w3-input" type="text" placeholder="Name" required name="Name">
+			<input class="w3-input" type="text" placeholder="Email" required name="Email">
+			<input class="w3-input" type="text" placeholder="Message" required name="Message"><br>
+			<button class="w3-button w3-black" type="submit">SEND</button>
+		</form>
+		<br>
+		<!-- Flip Card -->
+		<div style="text-align:center">
+			<div class="w3-center flip-card " >
+				<div class="flip-card-inner">
+					<div class="flip-card-front " >
+						<img src="Images/DavideCentauro.jpg" class="w3-image" style="width:100%;height:100%;object-fit: cover;">
+					</div>
+					<div class="flip-card-back">
+						<br>
+						<h2>Made in Italy</h2> 
+						<br>
+						<h3>7 Dicembre 1996</h3> 
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- End Content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-grey w3-center w3-large"> 
+<i class="fa fa-facebook-official w3-hover-opacity"></i>
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+  <i class="fa fa-snapchat w3-hover-opacity"></i>
+  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+  <i class="fa fa-twitter w3-hover-opacity"></i>
+  <i class="fa fa-linkedin w3-hover-opacity"></i>
+  <p class="w3-center w3-padding">Powered by me, myself & I</p>
+</footer>
+
+</body>
+</html>
