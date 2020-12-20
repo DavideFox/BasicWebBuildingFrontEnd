@@ -1,0 +1,125 @@
+/* raccolta di CSS custom */
+
+/* NAV BAR - sticky, collapse, left */
+.my-navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+.my-navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.my-navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.my-navbar a.active {
+  background-color: #000000;
+  color: white;
+}
+
+.my-navbar .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .my-navbar a:not(:first-child) {display: none;}
+  .my-navbar a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .my-navbar.responsive {position: relative;}
+  .my-navbar.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .my-navbar.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+/* OPACITY WITH RGBA */
+:root {
+	--color: 240, 240, 240;
+	--alpha: 0.8;
+}
+.my-opacity { /*da lo stesso effetto dell'opacity ma non viene passato ai figli */
+	background-color: rgba(var(--color), var(--alpha));
+}
+.my-opacity-gray {background:rgba(158, 158, 158,0.6)}
+
+
+/* BACKGROUND IMAGE*/
+.fixed-bg { /* il sito si muove, il background no! */
+	 /* background-image: url("JohnnyBravoBlogImages/wood.jpg");*/
+	 background-image: url("JohnnyBravoBlogImages/wood2.jpg");
+	 /*  background-image: url("JohnnyBravoBlogImages/city.gif");*/
+	  min-height: 500px;
+	  background-attachment: fixed;
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+}
+.cover {object-fit: cover;}	/* fit immages into container */
+
+
+/* MORE SHADOW CARD */
+.my-card, .my-hover-shadow:hover {
+	box-shadow: 0 14px 19px 0 rgba(0,0,0,0.4), 0 14px 20px 0 rgba(0,0,0,0.3);
+}
+
+
+/*  CSS Flip Card stuff*/
+.flip-card {
+	  margin-left: auto;
+	  margin-right: auto;
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+.flip-card-back {
+  background-color: yellow;
+  color: black;
+  transform: rotateY(180deg);
+}
