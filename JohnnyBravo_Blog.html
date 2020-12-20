@@ -5,85 +5,26 @@
 	<title>Johnny Bravo</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<!--librerie -->
+		<!-- my.CSS -->
+		<link href="my.css" rel="stylesheet" /> 
 		<!-- W3.CSS -->
-		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link href="W3.css" rel="stylesheet" /> 
 		<!-- icone fb insta ec... -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- google icons -->
+		<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
 		<!-- Sliding images -->
-		<script src="https://www.w3schools.com/lib/w3.js"></script>
+		  <script src="W3.js"></script>
 		
 		<!-- -->
 	<style>
-	.fixed-bg {
-		 /* background-image: url("JohnnyBravoBlogImages/wood.jpg");*/
-		 background-image: url("JohnnyBravoBlogImages/wood2.jpg");
-		 /*  background-image: url("JohnnyBravoBlogImages/city.gif");*/
-		  min-height: 500px;
-		  background-attachment: fixed;
-		  background-position: center;
-		  background-repeat: no-repeat;
-		  background-size: cover;
-		}
-	
-	.cover {object-fit: cover;}
-	
-	/*  CSS Flip Card stuff*/
-	.flip-card {
-		  margin-left: auto;
-		  margin-right: auto;
-	  background-color: transparent;
-	  width: 300px;
-	  height: 300px;
-	  perspective: 1000px;
-	}
 
-	.flip-card-inner {
-	  position: relative;
-	  width: 100%;
-	  height: 100%;
-	  text-align: center;
-	  transition: transform 0.6s;
-	  transform-style: preserve-3d;
-	  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-	}
-
-	.flip-card:hover .flip-card-inner {
-	  transform: rotateY(180deg);
-	}
-
-	.flip-card-front, .flip-card-back {
-	  position: absolute;
-	  width: 100%;
-	  height: 100%;
-	  -webkit-backface-visibility: hidden;
-	  backface-visibility: hidden;
-	}
-
-	.flip-card-front {
-	  background-color: #bbb;
-	  color: black;
-	}
-
-	.flip-card-back {
-	  background-color: yellow;
-	  color: black;
-	  transform: rotateY(180deg);
-	}
 	</style>
 </head>
 
 <body>
-
-<!-- Navigation (Stays on Top) -->
-<div class="w3-top w3-bar w3-black" style="font-size: 18px;">
-	<a href="#home" class="w3-bar-item w3-button">Home</a>
-	<a href="#about" class="w3-bar-item w3-button">About Myself</a>
-	<a href="#places" class="w3-bar-item w3-button">Cool Places</a>
-	<a href="#contact" class="w3-bar-item w3-button">Contact</a>
-</div>
-
-
-<div id="home" class="w3-display-container w3-text-white " style="width:100%;height:600px;" >
+<!-- Image header container -->
+<div id="home" class="w3-display-container w3-text-white " style="width:100%;height:550px;" >
 	<!-- Slides -->
 	<img class="slides " src="JohnnyBravoBlogImages/Montagna.jpg" style="width:100%;height:100%;object-fit:cover;">
 	<img class="slides " src="JohnnyBravoBlogImages/Lake.jpg" style="width:100%;height:100%;object-fit:cover;">
@@ -94,9 +35,31 @@
 	
 	<div class="w3-display-middle w3-container">
 		<h1 class="w3-center" style="font-size: 80px;">Johnny Bravo</h1>
-		<h2 >"Take the risk of thinking with your head"</h2>
+		<h2 class="w3-center">"Take the risk of thinking with your head"</h2>
 	</div>
 </div>
+
+<!-- Navigation (Sticky, after his position, it stays on Top) -->
+<div class="my-navbar" id="myTopnav">
+	<a class="my-navbar-links fa fa-home active" href="#home" style="font-size:30px"> </a>
+	<a class="my-navbar-links" href="#about">About Myself</a>
+	<a class="my-navbar-links"  href="#places"> Cool Places</a>
+	<a class="my-navbar-links" href="#contact">Contact</a>
+	<a class="my-navbar icon" href="javascript:void(0);" onclick="myFunction()">
+		<i class="fa fa-bars"></i>
+	</a>
+	<script>
+		function myFunction() {
+		  var x = document.getElementById("myTopnav");
+		  if (x.className === "my-navbar") {
+			x.className += " responsive";
+		  } else {
+			x.className = "my-navbar";
+		  }
+		}
+	</script>
+</div>
+
 
 <!-- Start Content -->
 <div class="fixed-bg">
@@ -107,9 +70,9 @@
 		<!-- About Myself -->
 		<div id="about" class="w3-content w3-container">
 			<br>
-			<div class="w3-card-4 w3-light-gray">
+			<div class="w3-card-4 my-opacity"
 			<br>
-				<h2 class="w3-center" style="font-size: 50px;">About Myself</h2>
+				<h2 class=" w3-center" style="font-size: 50px;">About Myself</h2>
 
 				<div class="w3-row-padding">
 					<div class="w3-third">
@@ -133,9 +96,9 @@
 		</div>
 		
 		<!-- Places -->
-		<div id="places" class="w3-container w3-padding-32">
+		<div id="places" class="w3-container w3-padding-32 ">
 			<br>
-			<div class="w3-card-4 w3-light-gray">
+			<div class="w3-card-4 my-opacity">
 				<br>
 				<h2 class="w3-center" style="font-size: 50px;">Cool places I've been</h2>
 				
@@ -183,7 +146,7 @@
 		<!-- Contact -->
 		<div id="contact" class="w3-container w3-center w3-padding-32">
 			<br>
-			<div class="w3-card-4 w3-light-gray">
+			<div class="w3-card-4 my-opacity">
 				<br>
 				<h2 class="w3-wide">CONTACT</h2>
 				Seregno, IT<br>
@@ -222,8 +185,9 @@
 	</div>
 </div>
 
+
 <!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-grey w3-center w3-large"> 
+<footer class="w3-container w3-padding-32 w3-grey w3-center w3-large"> 
 <i class="fa fa-facebook-official w3-hover-opacity"></i>
   <i class="fa fa-instagram w3-hover-opacity"></i>
   <i class="fa fa-snapchat w3-hover-opacity"></i>
