@@ -1,14 +1,50 @@
 /* raccolta di CSS custom */
 
+/* MARGINE */
+.my-margin {
+	padding-top: 0px;
+	padding-bottom: 40px;
+	padding-right: 28px;
+	padding-left: 28px;
+}
+
+/* ANIMATE-OPACITY */
+.my-animate-opacity{
+	animation:opac 3.5s
+}
+@keyframes opac{
+	from{opacity:0} 
+	to{opacity:1}
+}
+
+/* IMG ZOOM ON HOVER */
+.img-hover-zoom { /* [1] The container */
+  height: 100%; /* [1.1] Set it as per your need */
+  overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+}
+.img-hover-zoom img { /* [2] Transition property for smooth transformation of images */
+  transition: transform 1.5s ease;
+}
+.img-hover-zoom img:hover { /* [3] Finally, transforming the image when container gets hovered */
+  transform: scale(1.1);
+}
+
+/* TRANSITIONS */
+#trans-linear {transition-timing-function: linear;}
+#trans-ease {transition-timing-function: ease;}  
+#trans-ease-in {transition-timing-function: ease-in;}
+#trans-ease-out {transition-timing-function: ease-out;}
+#trans-ease-in-out {transition-timing-function: ease-in-out;}
+
 /* NAV BAR - sticky, collapse, left */
 .my-navbar {
   overflow: hidden;
   background-color: #333;
+  position: absolute;
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
 }
-
 .my-navbar a {
   float: left;
   display: block;
@@ -16,23 +52,23 @@
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 20px;
 }
-
 .my-navbar a:hover {
   background-color: #ddd;
   color: black;
 }
-
 .my-navbar a.active {
   background-color: #000000;
   color: white;
 }
-
+.my-navbar a.active:hover {
+  background-color: #ddd;
+  color: black;
+}
 .my-navbar .icon {
   display: none;
 }
-
 @media screen and (max-width: 600px) {
   .my-navbar a:not(:first-child) {display: none;}
   .my-navbar a.icon {
@@ -40,7 +76,6 @@
     display: block;
   }
 }
-
 @media screen and (max-width: 600px) {
   .my-navbar.responsive {position: relative;}
   .my-navbar.responsive .icon {
@@ -100,7 +135,7 @@
   width: 100%;
   height: 100%;
   text-align: center;
-  transition: transform 0.6s;
+  transition: transform 1.5s ease-out;
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }

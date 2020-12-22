@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Johnny Bravo</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<!--librerie -->
+		<!-- my.CSS -->
+		<link href="my.css" rel="stylesheet" /> 
+		<!-- W3.CSS -->
+		<link href="W3.css" rel="stylesheet" /> 
+		<!-- icone fb insta ec... -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- google icons -->
+		<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+		<!-- Sliding images -->
+		  <script src="W3.js"></script>
+		
+		<!-- -->
+	<style>
+		.fixed-bg { /* il sito si muove, il background no! */
+			/* background-image: url("JohnnyBravoBlogImages/wood.jpg");*/
+			/* background-image: url("JohnnyBravoBlogImages/wood2.jpg");*/
+			background-image: url("JohnnyBravoBlogImages/city.gif");
+		}
+	</style>
+</head>
+
+<body class="my-animate-opacity">
+<!-- Image header container -->
+<div id="home" class="w3-display-container w3-text-white " style="width:100%;height:550px;" >
+	<!-- Slides -->
+	<img class="slides " src="JohnnyBravoBlogImages/Montagna.jpg" style="width:100%;height:100%;object-fit:cover;">
+	<img class="slides " src="JohnnyBravoBlogImages/Lake.jpg" style="width:100%;height:100%;object-fit:cover;">
+	<img class="slides " src="JohnnyBravoBlogImages/Maldive.jpg" style="width:100%;height:100%;object-fit:cover;">
+	<script>
+		w3.slideshow(".slides", 2500);
+	</script>
+	
+	<div class="w3-display-middle w3-container">
+		<h1 class="w3-center" style="font-size: 80px;">Johnny Bravo</h1>
+		<h2 class="w3-center">"Take the risk of thinking with your head"</h2>
+	</div>
+</div>
+
+<!-- Navigation (Sticky, after his position, it stays on Top) -->
+<div class="my-navbar" id="myTopnav">
+	<a class="my-navbar fa fa-home active" href="#home" style="font-size:30px"> </a>
+	<a class="my-navbar" href="#about">About Myself</a>
+	<a class="my-navbar" href="#places">Cool Places</a>
+	<a class="my-navbar" href="#contact">Contact</a>
+	<a class="my-navbar icon" href="javascript:void(0);" onclick="myFunction()">
+		<i class="fa fa-bars"></i>
+	</a>
+	<script>
+		function myFunction() {
+		  var x = document.getElementById("myTopnav");
+		  if (x.className === "my-navbar") {
+			x.className += " responsive";
+		  } else {
+			x.className = "my-navbar";
+		  }
+		}
+	</script>
+</div>
+
+
+<!-- Start Content -->
+<div class="fixed-bg">
+
+	<div class="w3-content">
+		
+		<br>
+		<!-- About Myself -->
+		<div id="about" class="w3-content w3-container " >
+			<br>
+			<div class="w3-card-4 my-opacity my-margin " >
+			<br>
+				<h2 class=" w3-center" style="font-size: 50px;">About Myself</h2>
+
+				<div class="w3-row-padding">
+					<div class="w3-third">
+						<br>
+						<div class="w3-card-4">
+							<img src="JohnnyBravoBlogImages/JBposa.jpg" style="width:100%">
+						</div>
+						<br>
+					</div>
+					<div class="w3-twothird">
+						<h2 >Hey Mama!</h2>
+						<h5>Johnny Bravo is an American animated television series created by Van Partible for Cartoon Network.
+						<br>
+						The series centers on the title character, who is loosely based on Elvis Presley. Johnny Bravo is 
+						a sunglasses-wearing, muscular young man who lives with his mother and attempts to get women to 
+						date him, though he is usually unsuccessful.
+						</h5>
+					</div>		
+				</div>
+			</div>
+		</div>
+		
+		<!-- Places -->
+		<div id="places" class="w3-container w3-padding-32 ">
+			<br>
+			<div class="w3-card-4 my-opacity my-margin">
+				<br>
+				<h2 class="w3-center" style="font-size: 50px;">Cool places I've been</h2>
+				
+				<div class="w3-row-padding w3-margin-top">
+				
+					<div class="w3-third">
+						<div class="w3-card-4">
+							<div class=" img-hover-zoom">
+								<img src="JohnnyBravoBlogImages/Bianconiglio.jpg" style="width:100%">
+							</div>
+							<div class="w3-container w3-center" style="background-color: white">
+								<p>Scoglio del coniglio</p>
+								<p>Palinuro IT</p>
+							</div>
+						</div>
+						<br>
+					</div>
+					
+					<div class="w3-third">
+						<div class="w3-card-4">
+							<div class=" img-hover-zoom">
+								<img src="JohnnyBravoBlogImages/ResegoneView.jpg" style="width:100%">
+							</div>
+							<div class="w3-container w3-center" style="background-color: white">
+								<p>Monte Resegone</p>
+								<p>Valsassina IT</p>
+							</div>
+						</div>
+						<br>
+					</div>
+					
+					<div class="w3-third">
+						<div class="w3-card-4">
+							<div class=" img-hover-zoom">
+								<img src="JohnnyBravoBlogImages/u2.jpg" style="width:100%">
+							</div>
+							<div class="w3-container w3-center"  style="background-color: white">
+								<p>edificio U2, Bicocca</p>
+								<p>Piazza della scienza, Milano IT</p>
+							</div>
+						</div>
+						<br>
+					</div>
+
+				</div>
+				<br>
+			</div>
+		</div>
+
+			
+		<!-- Contact -->
+		<div id="contact" class="w3-container w3-center w3-padding-32">
+			<br>
+			<div class="w3-card-4 my-opacity ">
+				<br>
+				<h2 class="w3-wide">CONTACT</h2>
+				Seregno, IT<br>
+				Phone: +00 0000<br>
+				Email: mail@mail.com<br>
+				<p class="w3-opacity w3-center"><i>Fan? Drop a note!</i></p>
+
+				<form action="/action_page.php" target="_blank">
+					<input class="w3-input" type="text" placeholder="Name" required name="Name">
+					<input class="w3-input" type="text" placeholder="Email" required name="Email">
+					<input class="w3-input" type="text" placeholder="Message" required name="Message"><br>
+					<button class="w3-button w3-black" type="submit">SEND</button>
+				</form>
+				<br>
+				<!-- Flip Card -->
+				<div style="text-align:center">
+					<div class="w3-center flip-card " >
+						<div class="flip-card-inner">
+							<div class="flip-card-front " >
+								<img src="JohnnyBravoBlogImages/JB.jpg" class="w3-image" style="width:100%;height:100%;object-fit: cover;">
+							</div>
+							<div class="flip-card-back">
+								<br>
+								<h2>I'm Johnny Bravo</h2> 
+								<br>
+								<h3>Cartoon character <br> July 14, 1997 - August 27, 2004</h3> 
+							</div>
+						</div>
+					</div>
+				</div>
+				<br>
+			</div>
+		</div>
+
+	<!-- End Content -->
+	</div>
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-grey w3-center w3-large"> 
+<i class="fa fa-facebook-official w3-hover-opacity"></i>
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+  <i class="fa fa-snapchat w3-hover-opacity"></i>
+  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+  <i class="fa fa-twitter w3-hover-opacity"></i>
+  <i class="fa fa-linkedin w3-hover-opacity"></i>
+  <p class="w3-center w3-padding">Powered by me, myself & I</p>
+</footer>
+
+</body>
+</html>
