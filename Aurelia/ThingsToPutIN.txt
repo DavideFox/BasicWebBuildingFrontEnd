@@ -1,0 +1,44 @@
+							The Web Skeleton
+	Dopotutto, come diceva Cesare Pavese, "finché si avranno passioni non si cesserà di scoprire il mondo."
+	
+-HEADER BAR:
+	.bar con link  insta fb ecc.., (link a blog page con articoli commentabili)
+
+-L'AUTRICE:
+	-breve introduzione (foto di au che entra a comparsa e testo a lato)
+	-i luoghi dell'anima 
+	-galleria che cambia foto ogni 2 sec: sotto una barra con tutte le immagini in piccolo, selezionabili
+	-altro testo
+
+-IL LIBRO:
+	-parte con un frase di effetto sullo sfondo di un'immagine importante
+	-continua mostrando una flipcard del libro affiancata da un testo dove au parla del libro
+	-sarebbe davvero di supporto per me... e link che manda al sito per comprare il libro
+
+-FOOTER: 
+	-powerd by me myself and I
+
+
+CSS cool Stuff to use:
+-add CSS transition style transition: width 2s, height 4s; (after on muose hover)
+-font che su muove al passaggio del mouse
+-gogole fonts
+-good icons for linking socials
+-flip cards (W3.CSS)
+-scroll page with a fixed image for background (background fixed con un cointainer)
+-immagini con testo all' interno
+-galleria: immage opacity ion hover
+
+roba figa ma difficile:
+-immagine della costellazione di Au: su ogni stella metto un dropdown text al passaggio del mouse
+- CSS transform: rotate(3600deg + random); assieme a transition: transform 10s; Il risultato è una roulette casuale
+  che sceglierà la cosa da fare in base a dove punta
+- immagine spezzata in linee che si ricongiungono e mostrano 
+  l'immagine (vedi: https://www.w3schools.com/css/tryit.asp?filename=trycss3_animation_speed)
+  
+presentazione vari template a possibili clienti:
+- galeria di template: quando il possibile cliente clicca sopra quello che gli piace, questo apre 
+  una pagina dove il template è stato caricato con il suo nome e le sue foto. (effetto sorpresa ;))
+  OSS: il top sarebbe se tutto avvenisse all'interno di una pagina segreta del mio sito personale dove 
+  quando si sceglieranno il template più bello, cadranno sul tastino "HOME" e vedranno il mio sito.
+  
