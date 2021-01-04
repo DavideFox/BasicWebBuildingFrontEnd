@@ -18,7 +18,7 @@
 	padding-left: 9px;
 }
 
-/* IMMAGINI LLINEATE SON IL TESTO */
+/* IMMAGINI ALLINEATE CON IL TESTO */
 .alignleft { float: left; padding: 15px 15px 15px 0; }
 .alignright { float: right; padding: 15px 0 15px 15px; }
 
