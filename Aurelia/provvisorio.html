@@ -9,6 +9,10 @@
 		<link href="my.css" rel="stylesheet" /> 
 		<!-- W3.CSS -->
         <link href="W3.css" rel="stylesheet" /> 
+        <!-- gallery.CSS -->
+        <link href="gallery.css" rel="stylesheet" /> 
+        <!-- lightbox.CSS -->
+		<link href="lightbox.css" rel="stylesheet" /> 
         <!-- Bootstrap 4 -->
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" /> 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -37,7 +41,7 @@
             }
         }*/
 
-        h5, h4, h2, body, i {
+        h6, h5, h4, h2, p, body, i {
             font-family:"Gentium Book Basic",serif;
             color: #404040
         }
@@ -127,39 +131,181 @@
                     </div>
 
                     <div class="w3-half">
-                        <h2 ></h2>
-                        <h4>&nbsp Sono Aurelia Merola, originaria di Rofrano, un paesino nel bel mezzo del Parco 
-                            Nazionale del Cilento; mia fonte d’ispirazione grazie ai suoi suggestivi paesaggi.  
+                        <br>
+                        <h5>&nbsp Sono Aurelia Merola, <b>originaria di Rofrano, un paesino nel bel mezzo del Parco 
+                            Nazionale del Cilento</b>; mia fonte d’ispirazione grazie ai suoi suggestivi paesaggi.  
                             Le tradizioni, l’originalità , la verginità , i fianchi dei grandi monti  e le 
                             piccole stradine avvolte dalle chiome degli imponenti alberi che abbracciano questo 
                             piccolo paradiso terrestre, lo rendono Speciale. <br>
-                                                        
-                            &nbsp Tanti mi definiscono ‘allegra’, 
-                            io preferisco definirmi ‘amante della vita’. L’ aria fresca e qualche filo d’erba 
+                            <br>                            
+                            &nbsp Tanti mi definiscono ‘allegra’, io preferisco definirmi <b>‘amante della 
+                            vita’.</b> L’ aria fresca e qualche filo d’erba 
                             sono la mia pace e la positività, l’ottimismo e la meraviglia sono i tre ingredienti 
                             che uso per condire la mia quotidianità. <br>
-
-                            &nbsp Ho frequentato il Liceo Scientifico a 
-                            Vallo Della Lucania e ora studio fisica a Milano, città in cui mi sono trasferita 
-                            da poco. La mia giovane vita è bizzarra e non a caso sono completamente innamorata 
-                            delle sfumature.    Nel tempo libero scivolo nel mondo della pittura, della lettura 
-                            e della scrittura sognando orizzonti illimitati sul mio rustico terrazzino. <br>
                             <br>
-                            &nbsp Il futuro è ancora da costruire, ma il presente crea le fondamenta. 
- 
-                        </h4>
+                            &nbsp <b>Ho frequentato il Liceo Scientifico a 
+                            Vallo Della Lucania e ora studio fisica a Milano</b>, città in cui mi sono trasferita 
+                            da poco. La mia giovane vita è bizzarra e non a caso sono completamente innamorata 
+                            delle sfumature. Nel tempo libero scivolo nel mondo della pittura, della lettura 
+                            e della scrittura sognando orizzonti illimitati sul mio rustico terrazzino. <br>
+                        </h5>
+                        <br>
+                        <h5><i>"Il futuro è ancora da costruire, ma il presente crea le fondamenta."</i></h5>
+                        
                     </div>	
                     
                 </div>
             </div>
 
 
-            <!-- Il Libro ------------------------------------->
+            <!-- Gallery ------------------------------------->
             <div id="gallery">
                 <br>
                 <br>
                 <br><br><br><br><br>
                 <h2 class=" w3-center " style="font-size: 50px;">Luoghi Magici</h2>
+
+                
+                <div style="text-align:center">
+                    <h2>Tabbed Image Gallery</h2>
+                    <p>Click on the images below:</p>
+                </div>
+  
+                <!-- The four columns -->
+                <div class="gallery-row">
+                    <div class="gallery-column">
+                    <img src="Images/AuFaro.jpg" alt="Nature" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                    <div class="gallery-column">
+                    <img src="Images/IreneCasalvelinoMarina.jpg" alt="Snow" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                    <div class="gallery-column">
+                    <img src="Images/RofranoF.jpg" alt="Mountains" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                    <div class="gallery-column">
+                    <img src="Images/IreneRofranoARANCE.jpg" alt="Lights" style="width:100%" onclick="myFunction(this);">
+                    </div>
+                </div>
+                
+                <div class="gallery-container">
+                    <span onclick="this.parentElement.style.display='none'" class="gallery-closebtn">&times;</span>
+                    <img id="expandedImg" style="width:100%">
+                    <div id="imgtext"></div>
+                </div>
+                
+                <script>
+                function myFunction(imgs) {
+                    var expandImg = document.getElementById("expandedImg");
+                    var imgText = document.getElementById("imgtext");
+                    expandImg.src = imgs.src;
+                    imgText.innerHTML = imgs.alt;
+                    expandImg.parentElement.style.display = "block";
+                }
+                </script>
+
+                
+<h2 style="text-align:center">Lightbox</h2>
+
+<div class="row">
+  <div class="column">
+    <img src="Images/AuFaro.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="Images/IreneCasalvelinoMarina.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="Images/RofranoF.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="Images/IreneRofranoARANCE.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+      <img src="Images/AuFaro.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+      <img src="Images/IreneCasalvelinoMarina.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 4</div>
+      <img src="Images/RofranoF.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+      <img src="Images/IreneRofranoARANCE.jpg" style="width:100%">
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+
+    <div class="column">
+      <img class="demo cursor" src="img_nature_wide.jpg" style="width:100%" onclick="currentSlide(1)" alt="Nature and sunrise">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="img_snow_wide.jpg" style="width:100%" onclick="currentSlide(2)" alt="Snow">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="img_mountains_wide.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="img_lights_wide.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+    </div>
+  </div>
+</div>
+
+<script>
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
 
             </div> 
         
@@ -169,7 +315,7 @@
                 <br>
                 <br><br><br><br><br>
                 <h2 class=" w3-center " style="font-size: 50px;">Tutto e Niente</h2>
-                <h4 class="my-margin w3-center" style="font-style: italic;">
+                <h5 class="my-margin w3-center" style="font-style: italic;">
                     
                     "Il Tutto correlato al Nulla e il Nulla abbandonato al Tutto risultano inconsistenti,<br> 
                     immobili nella dinamicità del mondo e nella fugacità del tempo.<br>
@@ -182,22 +328,22 @@
                     <br>
                     generando il Nulla, <br> 
                     che forse Nulla non è."<br>
-                </h4>
+                </h5>
                 <div class="w3-row-padding">
                    
                     <div class="w3-twothird">
                         <h2 ></h2>
-                        <h4>
-                            &nbsp Mi è sempre piaciuto molto scrivere ma non avevo mai pensato che le mie parole
+                        <h5>
+                            &nbsp Mi è sempre piaciuto molto scrivere ma <b>non avevo mai pensato che le mie parole
                             potessero trasformarsi un giorno in una storia e che questa accompagnasse le persone
-                            in un viaggio introspettivo accarezando le loro coscienze.
+                            in un viaggio introspettivo </b>accarezando le loro coscienze.
                             Inizialmente tutto è nato da una raccolta di pensieri che annotavo sulla mia amata 
                             agendina. Infatti il libro è nato piano piano, come si suol dire ‘step by step’. 
                             Solo in seguito, ho iniziato a creare un personaggio, la protagonista di ‘Tutto e 
                             Niente’, e, dopo un po’ di tempo, il progetto ha preso forma.
                             <br><br> 
-                            &nbsp La protagonista di ‘Tutto e Niente’ esprime un forte bisogno mentale e spirituale di 
-                            tornare nella propria terra d’origine perché crede fortemente nelle potenzialità 
+                            &nbsp La protagonista di ‘Tutto e Niente’ esprime un forte <b>bisogno mentale e spirituale di 
+                            tornare nella propria terra d’origine</b> perché crede fortemente nelle potenzialità 
                             salvifiche di questa. Io sono molto legata alla mia calda terra e la mia storia 
                             personale è intrecciata con quella della protagonista che ,durante il suo percorso, 
                             valorizza le dimensioni più tenere, piccole e genuine di questa realtà e ne carpisce 
@@ -205,11 +351,11 @@
                             <br><br> 
                             &nbsp Vorrei che i miei scritti favoriscano un proficuo e sereno confronto che induca alla 
                             riflessione della propria condizione interiore e sociale e perché no, come diceva 
-                            sempre una mia carissima professoressa : ‘la rivoluzione si può fare anche con la 
-                            penna!’.
+                            sempre una mia carissima professoressa : <i>‘la rivoluzione si può fare anche con la 
+                            penna!’.</i>
                             <br>
                             
-                        </h4>
+                        </h5>
                     </div>	
                     
                     <div class="w3-third">
@@ -220,7 +366,7 @@
                         <br>
                         <div class="w3-center">
                             <a href="https://www.youcanprint.it/fiction-psicologico/tutto-e-niente-9791220303729.html"
-                                target="_blank" class="w3-btn w3-white w3-border">ACQUISTALO ORA!</a>
+                                target="_blank" class="my-card w3-btn my-hover-shadow w3-white w3-border">ACQUISTALO ORA!</a>
                         </div>
                     </div>
 
