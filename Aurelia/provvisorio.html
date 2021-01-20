@@ -9,10 +9,12 @@
 		<link href="my.css" rel="stylesheet" /> 
 		<!-- W3.CSS -->
         <link href="W3.css" rel="stylesheet" /> 
-        <!-- gallery.CSS -->
-        <link href="gallery.css" rel="stylesheet" /> 
-        <!-- lightbox.CSS -->
-		<link href="lightbox.css" rel="stylesheet" /> 
+        <!-- W3.js -->
+		<script src="W3.js"></script>
+        <!-- myGallery.CSS -->
+        <link href="myGallery.css" rel="stylesheet" />
+        <!-- myGallery.js -->
+		<script src="myGallery.js"></script> 
         <!-- Bootstrap 4 -->
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" /> 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -41,12 +43,15 @@
             }
         }*/
 
-        h6, h5, h4, h2, p, body, i {
+        h6, h5, h4, h2, h3, p, body, i {
             font-family:"Gentium Book Basic",serif;
             color: #404040
         }
-        h1 {
+        h1, #title {
             font-family: 'Cedarville Cursive', cursive;
+        }
+        .nav-item:hover { 
+            background-color: rgb(250,250,250);
         }
         
 	</style>
@@ -64,9 +69,10 @@
             <div class="my-opacity-invisible my-margin w3-text-white" >
             <br>
             <h1 class="w3-center" style="font-size: 80px;">Aurelia Merola</h1>
-            <h2 class="w3-center" style="color: white; font-style: italic;">" E’ come se il Nulla abbracciasse 
-                il Tutto e  quest’ultimo <br> si facesse abbracciare" <br>  
-            </h2> 
+            <h3 class="w3-center" style="color: white; font-style: italic;">
+                " E’ come se il Nulla abbracciasse il Tutto <br> 
+                e  quest’ultimo <br> si facesse abbracciare" <br>  
+            </h3> 
            <!-- <h2 class="w3-center" style="color: white" >"finché si avranno passioni non si cesserà di scoprire 
                 il mondo."
                 <br> Cesare Pavese
@@ -77,22 +83,22 @@
 
     <div class="my-container w3-content" >
 
-        <nav class="navbar navbar-expand-md  bg-white navbar-light sticky-top" >
+        <nav class="navbar navbar-expand-md  bg-white navbar-light sticky-top" style="height: 50px;" >
             <a class="navbar-brand fa fa-home active" href="#home" style="font-size:30px;"> </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" style="  text-align: center;
                 padding: 14px 16px; text-decoration: none; font-size: 20px;" id="collapsibleNavbar">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav" style="background-color:white;">
                     <li class="nav-item">
                         <a class="nav-link" href="#about">Un po' di Me</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#libro">Ho scritto un libro</a>
+                        <a class="nav-link" href="#gallery">Luoghi magici</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link" href="#libro">Ho scritto un libro</a>
                     </li>    
                 </ul>
             </div>  
@@ -106,7 +112,7 @@
                 <br>
                 <br>
                 <br>
-                <h2  class=" w3-center " style="font-size: 50px;">Eccomi!! </h2>
+                <h2  id="title" class="w3-center" style="font-size: 50px;">Eccomi! </h2>
                 <div class="w3-row-padding">
                     
                     <div class="w3-half w3-center">
@@ -157,164 +163,60 @@
                 </div>
             </div>
 
-
-            <!-- Gallery ------------------------------------->
-            <div id="gallery">
-                <br>
-                <br>
-                <br><br><br><br><br>
-                <h2 class=" w3-center " style="font-size: 50px;">Luoghi Magici</h2>
-
-                
-                <div style="text-align:center">
-                    <h2>Tabbed Image Gallery</h2>
-                    <p>Click on the images below:</p>
-                </div>
-  
-                <!-- The four columns -->
-                <div class="gallery-row">
-                    <div class="gallery-column">
-                    <img src="Images/AuFaro.jpg" alt="Nature" style="width:100%" onclick="myFunction(this);">
-                    </div>
-                    <div class="gallery-column">
-                    <img src="Images/IreneCasalvelinoMarina.jpg" alt="Snow" style="width:100%" onclick="myFunction(this);">
-                    </div>
-                    <div class="gallery-column">
-                    <img src="Images/RofranoF.jpg" alt="Mountains" style="width:100%" onclick="myFunction(this);">
-                    </div>
-                    <div class="gallery-column">
-                    <img src="Images/IreneRofranoARANCE.jpg" alt="Lights" style="width:100%" onclick="myFunction(this);">
-                    </div>
-                </div>
-                
-                <div class="gallery-container">
-                    <span onclick="this.parentElement.style.display='none'" class="gallery-closebtn">&times;</span>
-                    <img id="expandedImg" style="width:100%">
-                    <div id="imgtext"></div>
-                </div>
-                
-                <script>
-                function myFunction(imgs) {
-                    var expandImg = document.getElementById("expandedImg");
-                    var imgText = document.getElementById("imgtext");
-                    expandImg.src = imgs.src;
-                    imgText.innerHTML = imgs.alt;
-                    expandImg.parentElement.style.display = "block";
-                }
-                </script>
-
-                
-<h2 style="text-align:center">Lightbox</h2>
-
-<div class="row">
-  <div class="column">
-    <img src="Images/AuFaro.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
-  </div>
-  <div class="column">
-    <img src="Images/IreneCasalvelinoMarina.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
-  </div>
-  <div class="column">
-    <img src="Images/RofranoF.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
-  </div>
-  <div class="column">
-    <img src="Images/IreneRofranoARANCE.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
-  </div>
-</div>
-
-<div id="myModal" class="modal">
-  <span class="close cursor" onclick="closeModal()">&times;</span>
-  <div class="modal-content">
-
-    <div class="mySlides">
-      <div class="numbertext">1 / 4</div>
-      <img src="Images/AuFaro.jpg" style="width:100%">
-    </div>
-
-    <div class="mySlides">
-      <div class="numbertext">2 / 4</div>
-      <img src="Images/IreneCasalvelinoMarina.jpg" style="width:100%">
-    </div>
-
-    <div class="mySlides">
-      <div class="numbertext">3 / 4</div>
-      <img src="Images/RofranoF.jpg" style="width:100%">
-    </div>
+        </div>
     
-    <div class="mySlides">
-      <div class="numbertext">4 / 4</div>
-      <img src="Images/IreneRofranoARANCE.jpg" style="width:100%">
-    </div>
-    
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <!-- Gallery ------------------------------------->
+        <div id="gallery" class="w3-container">
+            <br>
+            <br>
+            <br><br><br><br><br>
+            <h2 id="title" class="w3-center " style="font-size: 50px;">Luoghi Magici</h2>
+            <br>
+            <h5 class="w3-center" style="padding: 5px 20px;">
+                Un ringraiamento speciale va alla Rofranese Irene Pepe, <br>
+                sempre pronta a catturare le bellezze del mondo con le sue foto!</h5>
+            <!-- The side column -->
+            <div class="side" >
+                <img id="0" class="gallery" src="Images/AuFaro.jpg" data-credits=""
+                    alt="Una Paddoccolina che corre a Capo Palinuro" onclick="showImage(this);">
+                <img id="1" class="gallery" src="Images/IreneCasalvelinoMarina.jpg" data-credits="photo by Irene Pepe"
+                    alt="Marina di Casal Velino" onclick="showImage(this);">
+                <img id="2" class="gallery" src="Images/RofranoAu2.jpg" data-credits=""
+                    alt="Rofrano by Night" onclick="showImage(this);">
+                <img id="3" class="gallery" src="Images/IreneRofranoARANCE2.jpg" data-credits="photo by Irene Pepe"
+                    alt="Rofrano Sunset" onclick="showImage(this);">
+                <img id="4" class="gallery" src="Images/IreneRofranoRoffs2.jpg" data-credits="photo by Irene Pepe"
+                    alt="Rofrano Tetti" onclick="showImage(this);">
+                <img id="5" class="gallery" src="Images/IreneMoloDeiFrancesiPalinuro.jpg" data-credits="photo by Irene Pepe"
+                    alt="Spiaggia del Molo dei Francesi" onclick="showImage(this);">
+                <img id="6" class="gallery" src="Images/IreneMarinaDiCamerota2.jpg" data-credits="photo by Irene Pepe"
+                    alt="Marina di Camerota" onclick="showImage(this);">
+                <img id="7" class="gallery" src="Images/Bianconiglio2.jpg" data-credits=""
+                    alt="Scoglio del Bianconiglio - Palinuro" onclick="showImage(this);">
+            </div>
+            <!-- main -->
+            <div class="main w3-text-white w3-container w3-display-container ">
+                <img id="expandedImg" class="main-image" src="Images/AuFaro.jpg" >
+                <div id="imgtext" class="w3-display-topleft w3-container"></div>
+                <div id="imgcredits" class="w3-display-bottomright w3-container"></div>
 
-    <div class="caption-container">
-      <p id="caption"></p>
-    </div>
+                <div class="prev w3-display-left w3-container" onclick="plusSlides(-1)">&#10094;</div>
+                <div class="next w3-display-right w3-container" onclick="plusSlides(1)">&#10095;</div>
+            </div>
+ 
+        </div> 
 
 
-    <div class="column">
-      <img class="demo cursor" src="img_nature_wide.jpg" style="width:100%" onclick="currentSlide(1)" alt="Nature and sunrise">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="img_snow_wide.jpg" style="width:100%" onclick="currentSlide(2)" alt="Snow">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="img_mountains_wide.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="img_lights_wide.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
-    </div>
-  </div>
-</div>
 
-<script>
-function openModal() {
-  document.getElementById("myModal").style.display = "block";
-}
 
-function closeModal() {
-  document.getElementById("myModal").style.display = "none";
-}
-
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  var captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
-}
-</script>
-
-            </div> 
-        
+        <div class="my-margin "> 
+                       
             <!-- Il Libro ------------------------------------->
             <div id="libro">
                 <br>
                 <br>
                 <br><br><br><br><br>
-                <h2 class=" w3-center " style="font-size: 50px;">Tutto e Niente</h2>
+                <h2 id="title" class="w3-center " style="font-size: 50px;">Tutto e Niente</h2>
                 <h5 class="my-margin w3-center" style="font-style: italic;">
                     
                     "Il Tutto correlato al Nulla e il Nulla abbandonato al Tutto risultano inconsistenti,<br> 
@@ -365,11 +267,24 @@ function showSlides(n) {
                         </div>
                         <br>
                         <div class="w3-center">
-                            <a href="https://www.youcanprint.it/fiction-psicologico/tutto-e-niente-9791220303729.html"
-                                target="_blank" class="my-card w3-btn my-hover-shadow w3-white w3-border">ACQUISTALO ORA!</a>
+                            <div class="dropdown">
+                                <button data-toggle="dropdown" class="my-shadow-infinite my-card w3-btn 
+                                            w3-white dropdown-toggle"
+                                                w3-border ">ACQUISTALO ORA!</button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="https://www.lafeltrinelli.it/libri/aurelia-merola/tutto-e-niente/9791220303729?awaid=9507&gclid=CjwKCAiAxp-ABhALEiwAXm6IyTmqDSWWe4p7Q74urpI8t63TM7XJCscv8pvr664jfFyzmaMKbY2MCBoCtnkQAvD_BwE&awc=9507_1611168050_be1c2f7f23cac299d6c687af27b4c0ab"
+                                        target="_blank" >laFeltrinelli.it</a>
+                                    <a class="dropdown-item" href="https://www.mondadoristore.it/Tutto-e-niente-Aurelia-Merola/eai979122030372/?utm_source=googleshopping&utm_medium=listing&utm_campaign=cpc&gclid=CjwKCAiAxp-ABhALEiwAXm6IyU0pZEGKDB2NUWviZi4XrAXx_7K01BFfbav6qTl_I78ClMfkUyl-vxoC5W4QAvD_BwE&gclsrc=aw.ds"
+                                        target="_blank" >MondadoriStore.it</a>
+                                    <a class="dropdown-item" href="https://www.youcanprint.it/fiction-psicologico/tutto-e-niente-9791220303729.html"
+                                        target="_blank" >YouCanPrint.it</a>
+                                    <a class="dropdown-item" href="https://www.amazon.it/Tutto-niente-Aurelia-Merola/dp/B08RGV6W33"
+                                        target="_blank" >Amazon.it</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
             </div>
 
@@ -390,7 +305,7 @@ function showSlides(n) {
                     style="  text-decoration: none;">
                     <i class="fab fa-instagram w3-hover-opacity" ></i>
                 </a>
-                <a href="https://www.youcanprint.it/fiction-psicologico/tutto-e-niente-9791220303729.html" 
+                <a href="https://www.amazon.it/Tutto-niente-Aurelia-Merola/dp/B08RGV6W33" 
                     target="_blank" style="  text-decoration: none;">
                     <i class="fas fa-book-open w3-hover-opacity" ></i>
                 </a>          
