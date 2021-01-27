@@ -1,4 +1,4 @@
-/* A gallery for images */
+/* A gallery for images */ 
 
 .gallery{
     width: 100%;
@@ -80,3 +80,25 @@
   .prev:hover, .next:hover {
     color: rgba(255,255,255, 0.8);
   }
+
+/* scrollbar */
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+        }
+        
+        /* Track */
+        ::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+        }
+        
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+        background: #ccc; 
+        }
+        
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+        background: #aaa; 
+        }
+            
